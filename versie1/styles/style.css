@@ -1,0 +1,260 @@
+:root {
+    --primary: #73d700;
+    --primaryHover: #5cac00;
+    --secondary: #ffad00;
+    --secondaryHover: #ff9800;
+    --link: #00b5e2;
+    --linkHover: #337ab7;
+    --tundora: #444;
+    --gray: #8b8b8b;
+    --mercury: #e1e1e1;
+    /* Madina */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--tundora);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375em;
+    margin: 0;
+}
+
+/** typography (mobile) **/
+
+h1 {
+    background-color: var(--tundora);
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.375em;
+    font-weight: 700;
+    line-height: 1.75;
+}
+
+h3 {
+    font-size: 1.125em;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+p {
+    max-width: 30em;
+    font-weight: 300;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a {
+    color: var(--linkHover);
+}
+
+img {
+    width: 100%;
+}
+
+/******/
+
+header {
+    width: 100vw;
+}
+
+header nav {
+    align-items: center;
+    background-color: var(--primary);
+    color: #fff;
+    display: flex;
+    height: 3em;
+    justify-content: center;
+    padding: 0.5em;
+}
+
+header nav a {
+    color: #fff;
+}
+
+header nav a:first-child {
+    margin: auto 0;
+    width: 8em;
+}
+
+header nav a:last-child {
+    position: absolute;
+    right: 0.5em;
+}
+
+header nav a:last-child::before {
+    position: absolute;
+    margin-left: -1.5em;
+    content: url('../images/22x22/profile.svg');
+    background-size: 1.375em 1.375em;
+    height: 1.375em;
+    width: 1.375em;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 0.5rem;
+    margin: auto auto;
+    max-width: 83rem;
+}
+
+/** article **/
+
+article {
+    border: 0.04em;
+    border-color: var(--mercury);
+    border-style: solid;
+    border-radius: 0.3em;
+    display: inline-block;
+    padding: 0.5em;
+    width: 1fr;
+}
+
+article img {
+    border-radius: 0.3em 0.3em 0 0;
+    height: 10em;
+    margin: -0.5em 0 0 -0.5em;
+    object-fit: cover;
+    object-position: 0 0;
+    /*  https://css-tricks.com/almanac/properties/o/object-position/  */
+    width: calc(100% + (2*0.5em));
+}
+
+article ul {
+    list-style: none;
+}
+
+article a {
+    color: var(--secondary);
+}
+
+article a::after {
+    position: absolute;
+    content: url('../images/22x22/arrow-right.svg');
+    margin-top: 0.2em;
+    background-size: 1em 1em;
+    height: 1em;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    width: 1em;
+}
+
+article a:hover {
+    color: var(--secondaryHover);
+}
+
+article a:hover::after {
+    margin-left: 0.25em;
+}
+
+article a:focus {
+    background-color: var(--secondary);
+    border-radius: 0.2em;
+    color: #fff;
+    outline: none;
+}
+
+/******/
+
+/** form **/
+
+form {
+    padding: 0.5em;
+}
+
+form label span {
+    display: none;
+}
+
+/*
+input[type=checkbox] {
+    outline: var(--primary);
+}
+*/
+
+input[type=search] {
+    border: 0.04em;
+    border-color: var(--mercury);
+    border-style: solid;
+    border-radius: 0.3em;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    color: #444;
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375em;
+    padding: 6px 0 7px 0;
+}
+
+input[type=submit] {
+    background: var(--secondary);
+    border: none;
+    border-radius: 0.25em;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    width: 71px;
+    padding: 6px 0 7px 0;
+    text-align: center;
+    transition-duration: 0.25s;
+    transition-property: background;
+    transition-timing-function: linear;
+}
+
+input[type=submit]:hover {
+    background: var(--secondaryHover);
+}
+
+/******/
+
+@media (min-width: 40em) {
+
+    header {
+        background-image: url("https://cdn.mos.cms.futurecdn.net/a27d6eab96b72a3705eae469aa63108f.jpg");
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-size: cover;
+    }
+
+    header form {
+        background: #fff;
+    }
+
+    header form:first-of-type {
+        margin-top: 8.75em;
+    }
+
+}
+
+
+@media (min-width: 83em) {
+
+    h1 {
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 0.3rem;
+        color: var(--tundora);
+        font-size: 1.75em;
+        font-weight: 700;
+        line-height: 2.125rem;
+        margin-top: 13.75rem;
+        padding: 0.5rem 1.125rem;
+        text-align: left;
+    }
+
+}
