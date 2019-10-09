@@ -386,6 +386,26 @@ select {
     width: 100%;
 }
 
+/*Validatie bron: https://codepen.io/joostf/pen/VKyPxk*/
+
+.aanmeld-formulier:invalid input[type=submit] {
+    opacity: 0.3;
+}
+
+.aanmeld-formulier:valid input[type=submit] {
+    opacity: 1;
+}
+
+.registreer-formulier:invalid input[type=submit] {
+    opacity: 0.3;
+}
+
+.registreer-formulier:valid input[type=submit] {
+    opacity: 1;
+}
+
+/**/
+
 /******/
 
 /** Footer **/
