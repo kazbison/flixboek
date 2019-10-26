@@ -5,4 +5,7 @@ FlixBoek is een responsive vormgegeven website, voor een seamless multi-device e
 ### GitHub page
 
 [Versie 1 demo](https://kazbison.github.io/flixboek/versie1/)
+
 [Versie 2 demo](https://kazbison.github.io/flixboek/versie2/)
+
+[FlixBoek site final](https://kazbison.github.io/flixboek/final/)
