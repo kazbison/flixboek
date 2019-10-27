@@ -3,11 +3,6 @@ var heart = document.querySelectorAll("article button");
 // Rekent uit hoeveel hartjes er op de pagina staan
 var amountOfHearts = heart.length;
 
-var heartTooltip = document.createElement("title");
-heartTooltip.textContent = Verhaal opslaan;
-document.querySelectorAll("article button svg").appendChild(heartTooltip);
-
-
 function toggleHeart() {
 
     /*\
@@ -17,26 +12,13 @@ function toggleHeart() {
 
     this.classList.toggle("added");
 
-    /*\
-    |*|  textcontent title in svg aanpassen als hartje class .added heeft
-    \*/
-
-//    if (this.classList.contains("added")) {
-//        console.log("verhaal verwijderen");
-//        this.heartTooltip.textContent = Verhaal verwijderen uit opgeslagen verhalen;
-//    } else {
-//        console.log("verhaal opslaan");
-//        this.heartTooltip.textContent = Verhaal opslaan;
-//    }
-
 }
+
+/*\
+|*|  De for loop zorgt ervoor dat de functie toggleHeart()
+|*|  niet alleen werkt bij het eerste hartje, maar bij alle hartjes
+\*/
 
 for (var i = 0; i < amountOfHearts; i++) {
     heart[i].addEventListener('click', toggleHeart, false);
 }
-
-// page load animation
-
-//window.addEventListener("load", () => {
-// document.querySelector("body").classList.add("loaded");
-//});

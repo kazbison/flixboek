@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#8B8B8B;}
-</style>
-<g>
-	<g>
-		<path class="st0" d="M504.5,75.5c-10-10-26.2-10-36.2,0L161.6,382.2L43.7,264.3c-10-10-26.2-10-36.2,0c-10,10-10,26.2,0,36.2
-			l136,136c10,10,26.2,10,36.2,0l324.8-324.8C514.5,101.7,514.5,85.5,504.5,75.5z"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M15.7668457,7.15343699 C15.5750209,6.94885434 15.2642648,6.94885434 15.07244,7.15343699 L9.18917411,13.4279869 L6.92755999,11.0159575 C6.73573521,10.8113748 6.42497907,10.8113748 6.2331543,11.0159575 C6.04132952,11.2205401 6.04132952,11.551964 6.2331543,11.7565466 L8.84197126,14.5388707 C9.03379604,14.7434534 9.34455218,14.7434534 9.53637695,14.5388707 L15.7668457,7.89402619 C15.9586705,7.68944354 15.9586705,7.35801964 15.7668457,7.15343699 Z" id="Path" stroke="#FFFFFF" stroke-width="0.5" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
 </svg>

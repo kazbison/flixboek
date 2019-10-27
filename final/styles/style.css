@@ -1,6 +1,6 @@
 :root {
     --primary: #73d700;
-    --primaryTransparent: rgba(115, 215, 0, 0.5);
+    --primaryTransparent: rgba(115, 215, 0, 0.3);
     --primaryHover: #5cac00;
     --secondary: #ffad00;
     --secondaryHover: #ff9800;
@@ -25,6 +25,10 @@ body {
     font-weight: 300;
     line-height: 1.375em;
     margin: 0;
+}
+
+img {
+    width: 100%;
 }
 
 /*\
@@ -52,7 +56,6 @@ h3 {
 }
 
 p {
-    max-width: 30em;
     font-weight: 300;
 }
 
@@ -61,12 +64,14 @@ a {
     text-decoration: none;
 }
 
-a {
+a:hover {
     color: var(--linkHover);
 }
 
-img {
-    width: 100%;
+legend {
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: 1.5em;
 }
 
 /*\
@@ -83,8 +88,8 @@ main {
 
 .story_overview {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5em;
     /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
 }
 
@@ -181,6 +186,8 @@ article:first-of-type img {
     height: 15em;
 }
 
+/*** hartje ***/
+
 article button {
     background: none;
     border: 0;
@@ -276,6 +283,8 @@ article button:focus svg {
     transform: scale(1.2);
 }
 
+/*** genre | recensie | leestijd ***/
+
 article ul {
     list-style: none;
     display: grid;
@@ -288,13 +297,24 @@ article ul li {
     width: 1fr;
 }
 
+/*** titel verhaal ***/
+
 article h3 {
     text-align: center;
 }
 
+/*** eerste zinnen verhaal ***/
+
+article p::after {
+    content: " [...]";
+}
+
+/*** link naar verhaal ***/
+
 article a {
     display: block;
     color: var(--secondary);
+    line-height: 2em;
     text-align: center;
 }
 
@@ -331,9 +351,7 @@ article a:focus {
 \*/
 
 form {
-    /*display: grid;*/
     width: 100%;
-    padding: 0.5em;
 }
 
 fieldset {
@@ -400,6 +418,16 @@ input[type=checkbox]:checked {
     border-color: var(--primary);
 }
 
+input[type=checkbox]:checked::before {
+    position: absolute;
+    margin-left: -0.55em;
+    margin-top: -0.6em;
+    content: url('../images/22x22/check.svg');
+    background-size: 1.375em 1.375em;
+    height: 1.375em;
+    width: 1.375em;
+}
+
 /*** dropdown ***/
 
 select {
@@ -408,14 +436,19 @@ select {
     border-color: var(--mercury);
     border-style: solid;
     border-radius: 0.3em;
-    box-shadow: 1px 1px 4px #EBEBEB;
     color: #444;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
     font-weight: 300;
+    height: 2.25em;
     line-height: 1.375em;
     padding: 6px 7px 7px 7px;
     width: 100%;
+}
+
+select:focus {
+    border-color: var(--secondary);
+    outline: none;
 }
 
 /*** button / submit ***/
@@ -425,6 +458,7 @@ input[type=submit] {
     border: none;
     border-radius: 0.25em;
     color: #fff;
+    cursor: pointer;
     font-size: 18px;
     font-weight: 400;
     padding: 6px 7px 7px 7px;
@@ -460,6 +494,11 @@ input[type=search] {
     /* px > em */
 }
 
+input[type=search]:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
 .search div {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -472,11 +511,17 @@ input[type=search] {
     /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
 }
 
-/* Aanmeld- en registreer formulier */
+/*** thema/genre en leestijd formulier ***/
+
+.filter {
+    border-bottom: solid 0.04em var(--mercury);
+}
+
+/*** Aanmeld- en registreer formulier ***/
 
 .aanmeld-formulier {
-    max-width: 40em;
     margin: 0 auto;
+    max-width: 40em;
 }
 
 .aanmeld-formulier * {
@@ -489,19 +534,13 @@ input[type=search] {
     text-align: center;
 }
 
-/*
-.aanmeld-formulier label {
-    padding: 0.5em 0 0 0;
-}
-*/
-
 .aanmeld-formulier input {
     display: block;
 }
 
 .registreer-formulier {
-    max-width: 40em;
     margin: 0 auto;
+    max-width: 40em;
 }
 
 .registreer-formulier * {
@@ -527,10 +566,12 @@ input[type=search] {
 \*/
 
 .aanmeld-formulier:invalid input[type=submit] {
+    cursor: default;
     opacity: 0.3;
 }
 
 .registreer-formulier:invalid input[type=submit] {
+    cursor: default;
     opacity: 0.3;
 }
 
@@ -583,7 +624,19 @@ footer img {
 |*|
 \*/
 
-@media (min-width: 40em) {
+@media (min-width: 41em) {
+
+    /*\
+    |*|
+    |*|  main
+    |*|
+    \*/
+
+    .story_overview {
+        grid-template-columns: repeat(2, 1fr);
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
 
     /*\
     |*|
@@ -598,14 +651,71 @@ footer img {
         background-size: cover;
     }
 
-    header form {
-        background: #fff;
-    }
+    /*\
+    |*|
+    |*|  form
+    |*|
+    \*/
 
-    header form:first-of-type {
+    .filter {
+        background: #fff;
         margin-top: 8.75rem;
     }
 
+    /*** thema/genre en leestijd formulier ***/
+
+    .filter {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "thema thema"
+            "leestijd button";
+        grid-gap: 0.5em;
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+        padding: 0.5em;
+    }
+
+    .filter div:first-of-type {
+        grid-area: thema;
+    }
+
+    .filter div:nth-of-type(2) {
+        grid-area: leestijd;
+    }
+
+    .filter div:last-child {
+        align-self: end;
+        grid-area: button;
+    }
+
+    /*** sorteer op + zoekbalk ***/
+
+    #white_bg {
+        background: #fff;
+        width: 100%;
+    }
+
+    .search_sort {
+        background: #fff;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "sort search";
+        grid-gap: 0.5em;
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+        max-width: 83em;
+        margin: auto auto;
+        padding: 0.5em;
+    }
+
+    .search_sort div:first-child {
+        align-self: end;
+        grid-area: search;
+    }
+
+    .search_sort div:last-child {
+        grid-area: sort;
+    }
 }
 
 /*\
@@ -618,9 +728,26 @@ footer img {
 
     /*\
     |*|
+    |*|  main
+    |*|
+    \*/
+
+    .story_overview {
+        grid-template-columns: repeat(4, 1fr);
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
+    /*\
+    |*|
     |*|  header
     |*|
     \*/
+
+    header nav div a:first-child {
+        margin: 0;
+        position: absolute;
+        left: 0.5em;
+    }
 
     #h1 {
         background: none;
@@ -642,15 +769,6 @@ footer img {
         text-align: left;
     }
 
-    header form {
-        margin: auto auto;
-        max-width: 83em;
-    }
-
-    header form:first-of-type {
-        margin-top: 0;
-    }
-
     /*\
     |*|
     |*|  article
@@ -665,6 +783,45 @@ footer img {
 
     article:first-of-type img {
         height: 20em;
+    }
+
+    /*\
+    |*|
+    |*|  form
+    |*|
+    \*/
+
+    header form {
+        margin: auto auto;
+        max-width: 83em;
+    }
+
+    .filter {
+        border: 0.04em;
+        border-color: var(--mercury);
+        border-style: solid;
+        border-radius: 0.25em;
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, .3);
+        /* https://css-tricks.com/almanac/properties/b/box-shadow/ */
+        margin-top: 0;
+    }
+
+    /*** thema/genre en leestijd formulier ***/
+
+    .filter {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "thema thema leestijd button";
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+        margin-bottom: 3em;
+    }
+
+    /*** sorteer op + zoekbalk ***/
+
+    .search_sort {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            ". . sort search";
     }
 
 }
