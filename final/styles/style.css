@@ -343,14 +343,16 @@ article ul li:last-of-type {
     padding-left: 1.5em;
 }
 
-article ul li:nth-last-of-type(2)::before,
-article ul li:last-of-type::before {
+article ul li::before
     background-size: 1.375em 1.375em;
-    content: url('../images/22x22/star.svg');
     height: 1.375em;
     margin-left: -1.5em;
     position: absolute;
     width: 1.375em;
+}
+
+article ul li:nth-last-of-type(2)::before {
+    content: url('../images/22x22/star.svg');
 }
 
 article ul li:last-of-type::before {
