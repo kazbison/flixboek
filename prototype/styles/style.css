@@ -1,0 +1,938 @@
+:root {
+    --primary: #73d700;
+    --primaryTransparent: rgba(115, 215, 0, 0.3);
+    --primaryHover: #5cac00;
+    --secondary: #ffad00;
+    --secondaryHover: #ff9800;
+    --link: #00b5e2;
+    --linkHover: #337ab7;
+    --tundora: #444;
+    --gray: #8b8b8b;
+    --mercury: #e1e1e1;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--tundora);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375em;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/*\
+|*|
+|*|  Typografie
+|*|
+\*/
+
+h1 {
+    font-size: 1.45em;
+    font-weight: 700;
+    line-height: initial;
+}
+
+h2 {
+    font-size: 1.375em;
+    font-weight: 700;
+    line-height: 1.75;
+}
+
+h3 {
+    font-size: 1.125em;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+p {
+    font-weight: 300;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--linkHover);
+}
+
+legend {
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+/*\
+|*|
+|*|  main
+|*|
+\*/
+
+main {
+    margin: auto auto;
+    max-width: 83rem;
+    padding: 0.5em;
+}
+
+.story_overview {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5em;
+    /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+}
+
+/*\
+|*|
+|*|  header
+|*|
+\*/
+
+header {
+    width: 100vw;
+}
+
+header nav {
+    align-items: center;
+    background-color: var(--primary);
+    color: #fff;
+}
+
+header nav div {
+    align-items: center;
+    display: flex;
+    /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    height: 3em;
+    justify-content: center;
+    margin: auto auto;
+    max-width: 83rem;
+    padding: 0.5em;
+    position: relative;
+}
+
+header nav div a {
+    color: #fff;
+}
+
+header nav div a:first-child {
+    margin: auto 0;
+    width: 8em;
+}
+
+header nav div ul {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 0.5em;
+}
+
+header nav div ul li {
+    margin-left: 0.5em;
+}
+
+header nav div ul li a {
+    padding-left: 1.5em;
+}
+
+header nav div ul li a:hover {
+    color: var(--mercury);
+}
+
+header nav div ul li a:hover::before {
+    margin-top: -0.1em;
+}
+
+header nav div ul li a:active {
+    color: var(--mercury);
+}
+
+header nav div ul li a span {
+    display: none;
+}
+
+header nav div ul li a::before {
+    background-size: 1.375em 1.375em;
+    height: 1.375em;
+    margin-left: -1.5em;
+    position: absolute;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    width: 1.375em;
+}
+
+header nav div ul li:first-of-type a::before {
+    content: url('../images/22x22/heart.svg');
+}
+
+header nav div ul li:last-of-type a::before {
+    content: url('../images/22x22/profile.svg');
+}
+
+#h1 {
+    background-color: var(--tundora);
+}
+
+#h1 h1 {
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+}
+
+/*\
+|*|
+|*|  article
+|*|
+\*/
+
+article {
+    border: 0.04em;
+    border-color: var(--mercury);
+    border-style: solid;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    position: relative;
+    width: 1fr;
+}
+
+article img {
+    border-radius: 0.3em 0.3em 0 0;
+    height: 10em;
+    margin: -0.5em 0 0 -0.5em;
+    object-fit: cover;
+    object-position: 0 0;
+    /* https://css-tricks.com/almanac/properties/o/object-position/ */
+    width: calc(100% + (2*0.5em));
+}
+
+article:first-of-type img {
+    height: 15em;
+}
+
+article:first-of-type h3 {
+    font-size: 1.45em;
+    font-weight: 700;
+    line-height: 1.75em;
+}
+
+/*** hartje ***/
+
+article button {
+    background: none;
+    border: 0;
+    top: 0.5em;
+    position: absolute;
+    right: 0.5em;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(.97);
+    }
+
+    35% {
+        transform: scale(.9);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+
+    55% {
+        transform: scale(.9);
+    }
+
+    65% {
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+article button svg {
+    stroke: var(--tundora);
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+    height: 2.5em;
+    width: 2.5em;
+}
+
+article button svg #heart {
+    fill: #fff;
+}
+
+.added #heart {
+    fill: #f00;
+    stroke: #f00;
+}
+
+article button svg #add,
+article button svg #subtract {
+    fill: var(--primary);
+    stroke: #fff;
+    opacity: 0;
+}
+
+article button svg #subtract {
+    fill: #f00;
+}
+
+article button svg:hover #add {
+    opacity: 1;
+}
+
+.added:hover #subtract {
+    opacity: 1;
+}
+
+article button:hover {
+    animation-name: heartbeat;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    /*https://stackoverflow.com/questions/34762009/pulsing-heart-css-animation*/
+}
+
+article button:focus {
+    outline: none;
+}
+
+/*
+article button:focus svg {
+    filter: drop-shadow(0 0 0.2rem #f00);
+    https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow
+    transform: scale(1.2);
+}
+*/
+
+/*** genre | recensie | leestijd ***/
+
+article ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 0.5em;
+    /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+}
+
+article ul li {
+    position: relative;
+    width: 1fr;
+}
+
+article ul li:nth-last-of-type(2),
+article ul li:last-of-type {
+    padding-left: 1.5em;
+}
+
+article ul li::before {
+    background-size: 1.375em 1.375em;
+    height: 1.375em;
+    margin-left: -1.5em;
+    position: absolute;
+    width: 1.375em;
+}
+
+article ul li:nth-last-of-type(2)::before {
+    content: url('../images/22x22/star.svg');
+}
+
+article ul li:last-of-type::before {
+    content: url('../images/22x22/stopwatch.svg');
+}
+
+/*** titel verhaal ***/
+
+article h3 {
+    text-align: center;
+}
+
+/*** eerste zinnen verhaal ***/
+
+article p::after {
+    color: rgba(0, 0, 0, 0.5);
+    content: " [...]";
+}
+
+/*** link naar verhaal ***/
+
+article a {
+    color: var(--secondary);
+    display: block;
+    line-height: 2em;
+    text-align: center;
+}
+
+article a::after {
+    position: absolute;
+    content: url('../images/22x22/arrow-right.svg');
+    margin-top: 0.2em;
+    background-size: 1em 1em;
+    height: 1em;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    width: 1em;
+}
+
+article a:hover {
+    color: var(--secondaryHover);
+}
+
+article a:hover::after {
+    margin-left: 0.25em;
+}
+
+article a:focus {
+    background-color: var(--secondary);
+    border-radius: 0.2em;
+    color: #fff;
+    outline: none;
+}
+
+/*\
+|*|
+|*|  form
+|*|
+\*/
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+}
+
+form legend span {
+    display: none;
+}
+
+form label span {
+    display: none;
+}
+
+input {
+    border: 0.04em;
+    border-color: var(--mercury);
+    border-style: solid;
+    border-radius: 0.25em;
+    color: var(--tundora);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375em;
+    padding: 6px 7px 7px 7px;
+    /* px > em */
+}
+
+input:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+/*** checkbox ***/
+
+input[type=checkbox] {
+    border-color: var(--mercury);
+    border-style: solid;
+    border-radius: 0.25em;
+    -webkit-appearance: button;
+    background-color: #fff;
+    color: #fff;
+    white-space: nowrap;
+    outline: none;
+    overflow: hidden;
+    width: 15px;
+    height: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* https://stackoverflow.com/questions/1120879/css-checkbox-input-styling */
+}
+
+input[type=checkbox]:hover {
+    box-shadow: inset 0px 1px 2px var(--tundora);
+    /* https://css-tricks.com/almanac/properties/b/box-shadow/ */
+}
+
+input[type=checkbox]:focus {
+    border-color: var(--secondary);
+}
+
+input[type=checkbox]:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+input[type=checkbox]:checked::before {
+    position: absolute;
+    margin-left: -0.55em;
+    margin-top: -0.6em;
+    content: url('../images/22x22/check.svg');
+    background-size: 1.375em 1.375em;
+    height: 1.375em;
+    width: 1.375em;
+}
+
+/*** dropdown ***/
+
+select {
+    background: #fff;
+    border: 0.04em;
+    border-color: var(--mercury);
+    border-style: solid;
+    border-radius: 0.25em;
+    color: #444;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    height: 2.25em;
+    line-height: 1.375em;
+    padding: 6px 7px 7px 7px;
+    width: 100%;
+}
+
+select:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+/*** button / submit ***/
+
+input[type=submit] {
+    background: var(--secondary);
+    border: none;
+    border-radius: 0.25em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 6px 7px 7px 7px;
+    /* px > em */
+    text-align: center;
+    transition-duration: 0.25s;
+    transition-property: background;
+    transition-timing-function: linear;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    background: var(--secondaryHover);
+}
+
+input[type=submit]:active {
+    color: var(--tundora);
+}
+
+input[type=submit]:focus {
+    background: #fff;
+    border: 0.04em;
+    border-color: var(--secondary);
+    border-style: solid;
+    color: var(--secondary);
+}
+
+/*** searchfield ***/
+
+input[type=search] {
+    border: 0.04em;
+    border-color: var(--mercury);
+    border-style: solid;
+    border-radius: 0.25em;
+    color: var(--tundora);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375em;
+    padding: 6px 7px 7px 7px;
+    /* px > em */
+}
+
+input[type=search]:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+.search div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 0.5em;
+    /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+}
+
+.search div label {
+    display: grid;
+    /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+}
+
+/*** thema/genre en leestijd formulier ***/
+
+.filter {
+    border-bottom: solid 0.04em var(--mercury);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "thema"
+        "leestijd"
+        "button";
+    grid-gap: 0.5em;
+    /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    padding: 0.5em;
+}
+
+.filter div:first-of-type {
+    grid-area: thema;
+}
+
+.filter div:nth-of-type(2) {
+    grid-area: leestijd;
+}
+
+.filter div:last-child {
+    align-self: end;
+    grid-area: button;
+}
+
+/*** sorteer op + zoekbalk ***/
+
+.search_sort {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "search"
+        "sort";
+    grid-gap: 0.5em;
+    /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    max-width: 83em;
+    margin: auto auto;
+    padding: 0.5em;
+}
+
+.search_sort div:first-child {
+    align-self: end;
+    grid-area: search;
+}
+
+.search_sort div:last-child {
+    grid-area: sort;
+}
+
+/*** Aanmeld- en registreer formulier ***/
+
+.aanmeld-formulier,
+.registreer-formulier {
+    margin: 0 auto;
+    margin-bottom: 3em;
+    max-width: 40em;
+}
+
+.aanmeld-formulier *,
+.registreer-formulier * {
+    width: 100%;
+}
+
+.aanmeld-formulier legend,
+.registreer-formulier legend {
+    font-size: 1.125em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.aanmeld-formulier input,
+.registreer-formulier input {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+/*\
+|*|
+|*|  form invalid
+|*|
+|*|  Bron: https://codepen.io/joostf/pen/VKyPxk
+|*|
+\*/
+
+.aanmeld-formulier:invalid input[type=submit] {
+    cursor: default;
+    opacity: 0.3;
+}
+
+.registreer-formulier:invalid input[type=submit] {
+    cursor: default;
+    opacity: 0.3;
+}
+
+/*\
+|*|
+|*|  form valid
+|*|
+|*|  Bron: https://codepen.io/joostf/pen/VKyPxk
+|*|
+\*/
+
+.aanmeld-formulier input[type=text]:valid,
+.aanmeld-formulier input[type=password]:valid {
+    background: var(--primaryTransparent);
+}
+
+.aanmeld-formulier:valid input[type=submit] {
+    opacity: 1;
+}
+
+.registreer-formulier input[type=text]:valid,
+.registreer-formulier input[type=email]:valid,
+.registreer-formulier input[type=password]:valid {
+    background: var(--primaryTransparent);
+}
+
+.registreer-formulier:valid input[type=submit] {
+    opacity: 1;
+}
+
+/*\
+|*|
+|*|  footer
+|*|
+\*/
+
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+footer img {
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+@media (min-width: 32em) {
+
+    header nav div ul li a span {
+        display: inline;
+    }
+
+}
+
+/*\
+|*|
+|*|  Als het venster breder is dan 40em wordt deze css geactiveerd
+|*|
+\*/
+
+@media (min-width: 41em) {
+
+    /*\
+    |*|
+    |*|  main
+    |*|
+    \*/
+
+    .story_overview {
+        grid-template-columns: repeat(2, 1fr);
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
+
+    /*\
+    |*|
+    |*|  header
+    |*|
+    \*/
+
+    header {
+        background-image: url("https://cdn.mos.cms.futurecdn.net/a27d6eab96b72a3705eae469aa63108f.jpg");
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-size: cover;
+    }
+
+    /*\
+    |*|
+    |*|  form
+    |*|
+    \*/
+
+    .filter {
+        background: #fff;
+        margin-top: 8.75rem;
+    }
+
+    /*** thema/genre en leestijd formulier ***/
+
+    .filter {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "thema thema"
+            "leestijd button";
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
+    /*** sorteer op + zoekbalk ***/
+
+    #white_bg {
+        background: #fff;
+        width: 100%;
+    }
+
+    .search_sort {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "sort search";
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
+    .search_sort div:first-child {
+        align-self: end;
+        grid-area: search;
+    }
+
+    .search_sort div:last-child {
+        grid-area: sort;
+    }
+
+    /*\
+    |*|
+    |*|  article
+    |*|
+    \*/
+
+    article:first-of-type {
+        grid-row: 1 / 3;
+        /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+    }
+
+    article:first-of-type img {
+        height: 20em;
+    }
+
+}
+
+@media (min-width: 65em) {}
+
+/*\
+|*|
+|*|  Als het venster breder is dan 83em wordt deze css geactiveerd
+|*|
+\*/
+
+@media (min-width: 83em) {
+
+    /*\
+    |*|
+    |*|  main
+    |*|
+    \*/
+
+    .story_overview {
+        grid-template-columns: repeat(4, 1fr);
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
+    /*\
+    |*|
+    |*|  header
+    |*|
+    \*/
+
+    header nav div > a {
+        margin: 0;
+        position: absolute;
+        left: 0.5em;
+    }
+
+    #h1 {
+        background: none;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+        margin: 12.5em auto 3em auto;
+        max-width: 83rem;
+    }
+
+    #h1 h1 {
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 0.3rem;
+        color: var(--tundora);
+        font-size: 1.75em;
+        font-weight: 700;
+        line-height: 2.125rem;
+        padding: 0.5rem 1.125rem;
+        text-align: left;
+    }
+
+    /*\
+    |*|
+    |*|  article
+    |*|
+    \*/
+
+    article:first-of-type {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+    }
+
+    article:first-of-type img {
+        height: 25em;
+    }
+
+    /*\
+    |*|
+    |*|  form
+    |*|
+    \*/
+
+    header form {
+        margin: auto auto;
+        max-width: 83em;
+    }
+
+    .filter {
+        border: 0.04em;
+        border-color: var(--mercury);
+        border-style: solid;
+        border-radius: 0.25em;
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, .3);
+        /* https://css-tricks.com/almanac/properties/b/box-shadow/ */
+        margin-top: 0;
+    }
+
+    /*** thema/genre en leestijd formulier ***/
+
+    .filter {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "thema thema leestijd button";
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+        margin-bottom: 3em;
+    }
+
+    /*** sorteer op + zoekbalk ***/
+
+    .search_sort {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            ". . sort search";
+    }
+
+}

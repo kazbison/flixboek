@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>99 verhalen voor op reis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="https://www.flixbus.nl/favicon/apple-touch-icon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+            <div>
+                <a href="index.html" title="Startpagina">
+                    <img src="./images/flixboek_logo.svg" alt="Startpagina">
+                </a>
+
+                <ul>
+                    <li>
+                        <a href="opgeslagen.html" title="Opgeslagen verhalen"><span>Opgeslagen</span></a>
+                    </li>
+                    <li>
+                        <a href="aanmelden.html" title="Aanmelden/registreren"><span>Login</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="h1">
+            <h1>99 verhalen voor op reis</h1>
+        </div>
+
+        <form>
+
+            <!-- CSS Grid werkt niet bij <fieldset> (in Chrome en Edge), daarom heb ik DIVjes gebruikt -->
+
+            <div class="filter">
+
+                <div>
+                    <fieldset>
+                        <legend>Thema</legend>
+
+                        <label>
+                            <input type="checkbox"> Chaotisch
+                        </label>
+                        <label>
+                            <input type="checkbox"> Fictief
+                        </label>
+                        <label>
+                            <input type="checkbox"> Komedie
+                        </label>
+                        <label>
+                            <input type="checkbox"> Poëtisch
+                        </label>
+                        <label>
+                            <input type="checkbox"> Romantisch
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> Spannend
+                        </label>
+                        <label>
+                            <input type="checkbox"> Zwevend
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div>
+                    <fieldset>
+                        <legend>Leestijd</legend>
+
+                        <label>
+                            <!--Verhalen korter dan 2 minuten-->
+                            <input type="checkbox"> &#60; dan 2 min
+                        </label>
+                        <label>
+                            <!--Verhalen van 2 tot 5 minuten-->
+                            <input type="checkbox" checked> 2 - 5 min
+                        </label>
+                        <label>
+                            <!--Verhalen langer dan 5 min-->
+                            <input type="checkbox" checked> &#62; 5 min
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div>
+                    <input type="submit" name="filter toepassen" value="Filter toepassen">
+                </div>
+            </div>
+        </form>
+
+        <div id="white_bg">
+            <div class="search_sort">
+
+                <div>
+                    <form class="search" action="#">
+                        <div>
+                            <label><span>zoeken</span>
+                                <input type="search">
+                            </label>
+                            <input type="submit" name="Zoeken" value="Zoek">
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <form>
+                        <fieldset>
+                            <legend>Sorteer op</legend>
+                            <select>
+                                <option>Meest gelezen - minst gelezen</option>
+                                <option>Minst gelezen - meest gelezen</option>
+                                <option>Nieuw - oud</option>
+                                <option>Oud - nieuw</option>
+                            </select>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main class="story_overview">
+
+        <article>
+            <img src="./images/verhalen/16-eric_lucassen.jpg" alt="Visueel vormgegeven verhaal genaamd Eric Lucassen">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Verhaal opslaan/verwijderen</title>
+                    <g>
+                        <g id="love-it">
+                            <path d="M12 21.8L2.4 11.8C0.7 10.1 0.3 7.5 1.3 5.3L1.3 5.3C2.2 3.7 3.7 2.5 5.5 2.2 7.3 1.9 9.1 2.5 10.4 3.8L12 5.4 13.6 3.8C14.9 2.5 16.7 1.9 18.5 2.2 20.3 2.5 21.8 3.7 22.7 5.3L22.7 5.3C23.7 7.5 23.3 10.1 21.6 11.8L12 21.8Z" id="heart" />
+                            <g id="add">
+                                <circle id="Oval" cx="17.254" cy="17.25" r="6"></circle>
+                                <path d="M17.254,14.25 L17.254,20.25" id="Shape"></path>
+                                <path d="M14.254,17.25 L20.254,17.25" id="Shape"></path>
+                            </g>
+                            <g id="subtract">
+                                <circle id="Oval" cx="17.247" cy="17.25" r="6"></circle>
+                                <path d="M14.247,17.25 L20.247,17.25" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <footer>
+                <ul>
+                    <li>Spannend</li>
+                    <li>4,6</li>
+                    <li>4 min</li>
+                </ul>
+            </footer>
+            <h3>Eric Lucassen</h3>
+            <p>Ik stap bus 21 uit terwijl ik mijn zoon op nog geen halve meter hinderlijk achtervolg. De gore klootzak heeft een uur geleden in z’n luier gescheten en dat pik ik niet. Maar hij slaapt, de hond. Hordes teringlijers en kankerhoeren lopen van en naar het Centraal Station van Amsterdam. Ik ben op weg naar</p>
+            <a href="ericlucassen.html">Eric Lucassen verder lezen</a>
+        </article>
+
+        <article>
+            <img src="./images/verhalen/alzheimer.png" alt="Visueel vormgegeven verhaal genaamd Alzheimer">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Verhaal opslaan/verwijderen</title>
+                    <g>
+                        <g id="love-it">
+                            <path d="M12 21.8L2.4 11.8C0.7 10.1 0.3 7.5 1.3 5.3L1.3 5.3C2.2 3.7 3.7 2.5 5.5 2.2 7.3 1.9 9.1 2.5 10.4 3.8L12 5.4 13.6 3.8C14.9 2.5 16.7 1.9 18.5 2.2 20.3 2.5 21.8 3.7 22.7 5.3L22.7 5.3C23.7 7.5 23.3 10.1 21.6 11.8L12 21.8Z" id="heart" />
+                            <g id="add">
+                                <circle id="Oval" cx="17.254" cy="17.25" r="6"></circle>
+                                <path d="M17.254,14.25 L17.254,20.25" id="Shape"></path>
+                                <path d="M14.254,17.25 L20.254,17.25" id="Shape"></path>
+                            </g>
+                            <g id="subtract">
+                                <circle id="Oval" cx="17.247" cy="17.25" r="6"></circle>
+                                <path d="M14.247,17.25 L20.247,17.25" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <footer>
+                <ul>
+                    <li>Chaotisch</li>
+                    <li>4,0</li>
+                    <li>2 min</li>
+                </ul>
+            </footer>
+            <h3>Alzheimer</h3>
+            <p>Ik stap uit, euh… Hoe heet het? Zo’n vervoersdinges op wielen. Van de gemeente. Wit met blauw. Kom. Lijn 12. Of was het 21?</p>
+            <a href="#">Alzheimer verder lezen</a>
+        </article>
+
+        <article>
+            <img src="./images/verhalen/21-sonnet.jpg" alt="Visueel vormgegeven verhaal genaamd Sonnet">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Verhaal opslaan/verwijderen</title>
+                    <g>
+                        <g id="love-it">
+                            <path d="M12 21.8L2.4 11.8C0.7 10.1 0.3 7.5 1.3 5.3L1.3 5.3C2.2 3.7 3.7 2.5 5.5 2.2 7.3 1.9 9.1 2.5 10.4 3.8L12 5.4 13.6 3.8C14.9 2.5 16.7 1.9 18.5 2.2 20.3 2.5 21.8 3.7 22.7 5.3L22.7 5.3C23.7 7.5 23.3 10.1 21.6 11.8L12 21.8Z" id="heart" />
+                            <g id="add">
+                                <circle id="Oval" cx="17.254" cy="17.25" r="6"></circle>
+                                <path d="M17.254,14.25 L17.254,20.25" id="Shape"></path>
+                                <path d="M14.254,17.25 L20.254,17.25" id="Shape"></path>
+                            </g>
+                            <g id="subtract">
+                                <circle id="Oval" cx="17.247" cy="17.25" r="6"></circle>
+                                <path d="M14.247,17.25 L20.247,17.25" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <footer>
+                <ul>
+                    <li>Poëtisch</li>
+                    <li>4,0</li>
+                    <li>2 min</li>
+                </ul>
+            </footer>
+            <h3>Sonnet</h3>
+            <p>Bus 21, 12 uur, begin van de week. Mijn zoon slaapt in zijn wagentje, en zo. Ga ik op zoek naar Stijloefeningen van Queneau.</p>
+            <a href="#">Sonnet verder lezen</a>
+        </article>
+
+        <article>
+            <img src="./images/verhalen/johan.png" alt="Visueel vormgegeven verhaal genaamd Johan Cruijff">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <title>Verhaal opslaan/verwijderen</title>
+                    <g>
+                        <g id="love-it">
+                            <path d="M12 21.8L2.4 11.8C0.7 10.1 0.3 7.5 1.3 5.3L1.3 5.3C2.2 3.7 3.7 2.5 5.5 2.2 7.3 1.9 9.1 2.5 10.4 3.8L12 5.4 13.6 3.8C14.9 2.5 16.7 1.9 18.5 2.2 20.3 2.5 21.8 3.7 22.7 5.3L22.7 5.3C23.7 7.5 23.3 10.1 21.6 11.8L12 21.8Z" id="heart" />
+                            <g id="add">
+                                <circle id="Oval" cx="17.254" cy="17.25" r="6"></circle>
+                                <path d="M17.254,14.25 L17.254,20.25" id="Shape"></path>
+                                <path d="M14.254,17.25 L20.254,17.25" id="Shape"></path>
+                            </g>
+                            <g id="subtract">
+                                <circle id="Oval" cx="17.247" cy="17.25" r="6"></circle>
+                                <path d="M14.247,17.25 L20.247,17.25" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <footer>
+                <ul>
+                    <li>Chaotisch</li>
+                    <li>4,0</li>
+                    <li>4 min</li>
+                </ul>
+            </footer>
+            <h3>Johan Cruijff</h3>
+            <p>In principe is het dus zo dat je uit Bus 21 stapte en op weg was naar de Openbare Bibliotheek om Stijloefeningen van Raymond</p>
+            <a href="#">Johan Cruijff verder lezen</a>
+        </article>
+
+    </main>
+
+    <footer>
+        <img src="images/flixmobility-2x.png" alt="FlixBus illustratie">
+    </footer>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>

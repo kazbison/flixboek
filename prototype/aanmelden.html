@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FlixBoek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="images/Flix_icon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <div>
+                <a href="index.html" title="Startpagina">
+                    <img src="./images/flixboek_logo.svg" alt="Startpagina">
+                </a>
+
+                <ul>
+                    <li>
+                        <a href="opgeslagen.html" title="Opgeslagen verhalen"><span>Opgeslagen</span></a>
+                    </li>
+                    <li>
+                        <a href="aanmelden.html" title="Aanmelden/registreren"><span>Login</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <form action="index.html" class="aanmeld-formulier">
+            <fieldset>
+                <legend>Ik heb een account</legend>
+                <label>Gebruikersnaam of emailadres
+                    <input type="text" name="username" required>
+                </label>
+                <label>Wachtwoord
+                    <input type="password" name="password" required>
+                </label>
+
+                <a href="#" title="Nieuw wachtwoord aanvragen">Wachtwoord vergeten?</a>
+
+                <input type="submit" name="login" value="Aanmelden">
+            </fieldset>
+        </form>
+
+        <form action="index.html" class="registreer-formulier">
+            <fieldset>
+                <legend>Ik wil me aanmelden voor FlixBoek</legend>
+                <label>Voornaam
+                    <input type="text" name="first-name" required>
+                </label>
+                <label>Gebruikersnaam
+                    <input type="text" name="username" required>
+                </label>
+                <label>Jouw emailadres
+                    <input type="email" name="email" placeholder="john@example.com" required>
+                </label>
+                <label>Wachtwoord
+                    <input type="password" name="password" required>
+                </label>
+                <input type="submit" name="register" value="Registreren">
+            </fieldset>
+        </form>
+
+    </main>
+
+    <footer>
+        <img src="images/flixmobility-2x.png" alt="FlixBus illustratie">
+    </footer>
+
+</body>
+
+</html>
