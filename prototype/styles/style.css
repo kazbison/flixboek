@@ -422,6 +422,10 @@ article a:focus {
 |*|
 \*/
 
+#inline_block{
+    display: inline-block;
+}
+
 form {
     width: 100%;
 }
