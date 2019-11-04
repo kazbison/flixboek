@@ -93,6 +93,13 @@ main {
     /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
 }
 
+.saved_stories {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5em;
+    /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+}
+
 /*\
 |*|
 |*|  header
@@ -216,11 +223,11 @@ article img {
     width: calc(100% + (2*0.5em));
 }
 
-article:first-of-type img {
+.story_overview article:first-of-type img {
     height: 15em;
 }
 
-article:first-of-type h3 {
+.story_overview article:first-of-type h3 {
     font-size: 1.45em;
     font-weight: 700;
     line-height: 1.75em;
@@ -752,6 +759,11 @@ footer img {
         /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
     }
 
+    .saved_stories {
+        grid-template-columns: repeat(2, 1fr);
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
 
     /*\
     |*|
@@ -816,12 +828,12 @@ footer img {
     |*|
     \*/
 
-    article:first-of-type {
+    .story_overview article:first-of-type {
         grid-row: 1 / 3;
         /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
     }
 
-    article:first-of-type img {
+    .story_overview article:first-of-type img {
         height: 20em;
     }
 
@@ -844,6 +856,11 @@ footer img {
     \*/
 
     .story_overview {
+        grid-template-columns: repeat(4, 1fr);
+        /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+    }
+
+    .saved_stories {
         grid-template-columns: repeat(4, 1fr);
         /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
     }
@@ -886,13 +903,13 @@ footer img {
     |*|
     \*/
 
-    article:first-of-type {
+    .story_overview article:first-of-type {
         grid-column: 1 / 3;
         grid-row: 1 / 3;
         /*https://css-tricks.com/snippets/css/complete-guide-grid/*/
     }
 
-    article:first-of-type img {
+    .story_overview article:first-of-type img {
         height: 25em;
     }
 
